@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://rmfxgnmn6h1q"]
+
+[ext_resource type="FontFile" uid="uid://yufv8hybdc4l" path="res://assets/fonts/FrancoisOne-Regular.ttf" id="1_duq84"]
+[ext_resource type="Script" uid="uid://o3l35yf3ugb3" path="res://scenes/menu_you_win.gd" id="1_ta7iv"]
+[ext_resource type="Texture2D" uid="uid://c4q5g3otwirp7" path="res://assets/images/image-screen-win.png" id="2_ta7iv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7wbt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="MenuYouWin" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ta7iv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -25.0
+offset_right = 1177.0
+offset_bottom = 680.0
+color = Color(0.408419, 1, 0.758005, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = -30.0
+offset_right = 1500.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0.224145, 0.806773, 0.613549, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("1_duq84")
+theme_override_font_sizes/font_size = 165
+text = "YOU WIN!"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -82.0
+offset_right = 1177.0
+offset_bottom = 599.0
+texture = ExtResource("2_ta7iv")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 462.0
+offset_right = 735.0
+offset_bottom = 694.0
+theme_override_colors/font_hover_color = Color(0, 0.713546, 0.653144, 1)
+theme_override_colors/font_color = Color(0.900496, 0.656815, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_duq84")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxFlat_g7wbt")
+text = "MAIN MENU"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
